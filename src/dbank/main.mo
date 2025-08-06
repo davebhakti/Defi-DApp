@@ -1,7 +1,7 @@
 import Debug "mo:base/Debug";
 
 actor DBack {
-  var currentValue = 300;
+  stable var currentValue = 300;
   currentValue := 100;
 
   let id = 1234567890;
@@ -19,6 +19,10 @@ actor DBack {
     } else {
       Debug.print("Amount is too large, currentValue is less than zero.");
     }
-  }
+  };
+
+  public query func checkBalance(): async Nat {
+    return currentValue;
+  };
 }
 
