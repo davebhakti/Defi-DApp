@@ -1,4 +1,13 @@
 # dbank
+This project is a simple DeFi (Decentralized Finance) application built on the Internet Computer Protocol (ICP) using the DFINITY SDK. It demonstrates how a decentralized bank can allow users to deposit and withdraw funds, with state persistence powered by Internet Computer canisters.
+-Track Balances – View your current account balance in real-time.
+-Deposit (Top Up) – Add funds using the form UI.
+-Withdraw – Subtract from your balance with validations in place.
+-Canister-Based Backend – Uses Internet Computer's actor model for secure state management.
+-Frontend + Backend Integration – Real-time communication between the frontend and backend via @dfinity/agent.
+
+
+
 
 To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
 
