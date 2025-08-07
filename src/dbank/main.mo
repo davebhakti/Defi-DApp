@@ -1,19 +1,18 @@
 import Debug "mo:base/Debug";
-import Float "mo:base/Float";
-import Float "mo:base/Float";
-import Float "mo:base/Float";
 import Time "mo:base/Time";
 import Float "mo:base/Float";
 
-actor DBack {
+actor DBank {
   stable var currentValue: Float = 300;
-  currentValue := 100;
+  currentValue := 300;
+  Debug.print(debug_show(currentValue));
 
   stable var startTime = Time.now();
-  startTime:= Time.now();
+  startTime := Time.now();
   Debug.print(debug_show(startTime));
 
-  let id = 1234567890;
+  let id = 2348923840928349;
+  // Debug.print(debug_show(id));
 
   public func topUp(amount: Float) {
     currentValue += amount;
@@ -21,12 +20,12 @@ actor DBack {
   };
 
   public func withdraw(amount: Float) {
-    let tempValue: Int = currentValue - amount;
+    let tempValue: Float = currentValue - amount;
     if (tempValue >= 0) {
       currentValue -= amount;
       Debug.print(debug_show(currentValue));
     } else {
-      Debug.print("Amount is too large, currentValue is less than zero.");
+      Debug.print("Amount too large, currentValue less than zero.")
     }
   };
 
@@ -34,12 +33,14 @@ actor DBack {
     return currentValue;
   };
 
-  public func compund() {
+  // topUp();
+
+  public func compound() {
     let currentTime = Time.now();
     let timeElapsedNS = currentTime - startTime;
-    let timeElaspedNS = timeElapsedNS / 1000000000;
-    currentValue := currentValue * (1.01 ** Float.fromInt(timeElapsed));
-    startTime := currenTime;
-  }
-}
+    let timeElapsedS = timeElapsedNS / 1000000000;
+    currentValue := currentValue * (1.01 ** Float.fromInt(timeElapsedS));
+    startTime := currentTime;
+  };
 
+}
